@@ -1,32 +1,43 @@
-public class UmurManusia {
+package com.mycompany.mavenproject2;
+
+import java.util.Scanner;
+
+public class AgeeCategory {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter your name: ");
+        String name = input.nextLine();
+        System.out.print("Enter your age: ");
+        int age = input.nextInt();
 
-        // Input nama dan umur
-        System.out.print("Masukkan nama: ");
-        String nama = scanner.nextLine();
-        System.out.print("Masukkan umur: ");
-        int umur = scanner.nextInt();
-
-        // Tentukan kategori umur
-        String kategori;
-        if (umur < 5) {
-            kategori = "balita";
-        } else if (umur >= 5 && umur < 12) {
-            kategori = "anak";
-        } else if (umur >= 12 && umur < 18) {
-            kategori = "remaja";
-        } else if (umur >= 18 && umur < 40) {
-            kategori = "dewasa";
-        } else if (umur >= 40 && umur < 60) {
-            kategori = "paruhbaya";
+        if (age < 5) {
+            System.out.println(name + " is a baby.");
+        } else if (5 <= age && age < 12) {
+            System.out.println(name + " is a child.");
+        } else if (12 <= age && age < 18) {
+            System.out.println(name + " is a teenager.");
+        } else if (18 <= age && age < 40) {
+            System.out.println(name + " is a young adult.");
+        } else if (40 <= age && age < 60) {
+            System.out.println(name + " is a middle-aged adult.");
+        } else if (age >= 60) {
+            System.out.println(name + " is a senior citizen.");
         } else {
-            kategori = "lanjut usia";
+            System.out.println("Invalid age.");
         }
 
-        // Tampilkan hasil
-        System.out.println("Nama: " + nama);
-        System.out.println("Umur: " + umur + " tahun");
-        System.out.println("Kategori: " + kategori);
+        System.out.println("\nNow, let's check the categories for the following people:");
+        System.out.println("a) Miroku is 12 years old");
+        if (12 == age) {
+            System.out.println("Miroku is a child.");
+        }
+        System.out.println("b) Kafka Hibino is 39 years old");
+        if (39 == age) {
+            System.out.println("Kafka Hibino is a young adult.");
+        }
+        System.out.println("c) Saitama is 20 years old");
+        if (20 == age) {
+            System.out.println("Saitama is a young adult.");
+        }
     }
 }
